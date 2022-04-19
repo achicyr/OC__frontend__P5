@@ -1,3 +1,33 @@
+# RÉSUMÉ PERSONNEL
+
+- dans une agence web depuis qlq semaines
+- mission: "kanap" -> commerce traditionnel exclusif de vente de canapés ==>> la mission est de passer au ecommerce
+- 3 RH:
+    - CTO Corine
+    - dev frontend Frank
+    - dev backend Bilal
+- 2 choses à faire en premier:
+    - cloner le repository
+    - faire un test d'acception grâce à un template de tableur Excel fourni par l'équipe
+
+
+
+---
+
+# README du repo
+## Kanap
+
+This is the front end and back end server for Project 5 of the Web Developer path.
+
+### Back end Prerequisites
+You will need to have Node and npm installed locally on your machine.
+
+### Back end Installation
+Clone this repo. From the "back" folder of the project, run npm install. You can then run the server with node server. The server should run on localhost with default port 3000. If the server runs on another port for any reason, this is printed to the console when the server starts, e.g. Listening on port 3001.
+
+---
+
+
 # OC, PROJET 5 DU PARCOURS "DÉVELOPPEUR-WEB": Construisez un site e-commerce en JavaScript
 
 ---
