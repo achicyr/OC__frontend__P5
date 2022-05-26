@@ -22,8 +22,8 @@ fetch("http://localhost:3000/api/products")
                 for(color in storage[id]){
                     products[indexProduct].color = color
                     products[indexProduct].quantity = storage[id][color]
+                    panier.push({...products[indexProduct]})
                 }
-                panier.push(products[indexProduct])
             }
                 
     panier.map(item=>{
@@ -51,6 +51,13 @@ fetch("http://localhost:3000/api/products")
             </article>
         `
     })
+
+    totalQuantity.innerHTML = panier
+                                .map(x=>parseInt(x.quantity))
+                                .reduce((x,y)=>x+y)
+    totalPrice.innerHTML = panier
+                            .map(x=>x.price*x.quantity)
+                            .reduce((x,y)=>x+y)
 })
 
 // let template = `
