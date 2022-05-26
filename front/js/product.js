@@ -29,30 +29,6 @@ function getProduct(){
 
     })
 
-    addToCart.addEventListener('click', e=>{
-        if(colors.value && parseInt(quantity.value)){
-
-            let item = JSON.parse(localStorage.getItem(id)),
-            hasItem = item ? true : false,
-            hasColor = hasItem ? item[colors.value] ? true : false : false
-
-            let addProduct = {[colors.value]: quantity.value}
-
-            if(!hasItem) item = addProduct
-            if(hasItem && !hasColor) item[colors.value] = quantity.value
-            if(hasItem && hasColor) item[colors.value] = parseInt(item[colors.value]) + parseInt(quantity.value)
-            
-            localStorage.setItem(id, JSON.stringify(item))
-
-            alert(`Vous venez d'ajouter ${quantity.value} articles "${title.textContent}" à votre panier`)
-            console.log(localStorage);
-        }
-            
-        else
-            if(!colors.value)
-                alert(`Veuillez choisir une COULEUR avant d'ajouter l'article: "${title.textContent}" au panier.`)
-            else 
-                alert(`Veuillez définir une QUANTITÉ avant d'ajouter l'article: "${title.textContent}" au panier.`)
-
-    })
+    
+    
 }
