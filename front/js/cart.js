@@ -144,6 +144,7 @@ fetch("http://localhost:3000/api/products")
         })
         .then(function(value) {
             console.log(value)
+            location.href = "./confirmation.html?order-id="+value.orderId
         })
     })
     // document.querySelector('.cart__order__form').onsubmit='return false'
@@ -179,17 +180,3 @@ fetch("http://localhost:3000/api/products")
 // `
 
 
-
-function formCheck() {
-    /*ここにチェックロジック*/
-    // テキストボックスの値取得
-    var text1 = document.getElementById("text1").value;
-    
-    // 未入力の場合alert表示&submit止める
-    if (text1 == "") {
-      alert("未入力です");
-      return false;
-    } else {
-      return true;
-    }
-  }
