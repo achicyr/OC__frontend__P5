@@ -112,6 +112,46 @@ fetch("http://localhost:3000/api/products")
             document.location.reload()
         }
     }))
+
+
+    document.querySelector('.cart__order__form').addEventListener('submit', e=>{
+        let form = e.target,
+        formObject = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            address: address.value,
+            city: city.value,
+            email: email.value
+        }
+
+        console.log(formObject)
+
+        e.preventDefault()
+        console.log(Object.keys(localStorage).every(x=>typeof x == 'string'))
+
+        fetch("http://localhost:3000/api/products/order", {
+            method: "POST",
+            headers: {
+              'Accept': 'application/json', 
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({contact: formObject, products: Object.keys(localStorage).filter(x=>typeof x == 'string')})
+        })
+        .then(function(res) {
+            if (res.ok) {
+                return res.json();
+            }
+        })
+        .then(function(value) {
+            console.log(value)
+        })
+    })
+    // document.querySelector('.cart__order__form').onsubmit='return false'
+    // document.querySelector('.cart__order__form').addEventListener('submit',function(e){
+    //     console.log(this.form)
+    //     return false
+    // })
+    
 })
 
 // let template = `
@@ -140,3 +180,16 @@ fetch("http://localhost:3000/api/products")
 
 
 
+function formCheck() {
+    /*ここにチェックロジック*/
+    // テキストボックスの値取得
+    var text1 = document.getElementById("text1").value;
+    
+    // 未入力の場合alert表示&submit止める
+    if (text1 == "") {
+      alert("未入力です");
+      return false;
+    } else {
+      return true;
+    }
+  }

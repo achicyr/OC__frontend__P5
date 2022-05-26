@@ -47,15 +47,25 @@ exports.getOneProduct = (req, res, next) => {
  *
  */
 exports.orderProducts = (req, res, next) => {
-  if (!req.body.contact ||
-      !req.body.contact.firstName ||
-      !req.body.contact.lastName ||
-      !req.body.contact.address ||
-      !req.body.contact.city ||
-      !req.body.contact.email ||
-      !req.body.products) {
-    return res.status(400).send(new Error('Bad request!'));
-  }
+  // if (!req.body.contact ||
+  //     !req.body.contact.firstName ||
+  //     !req.body.contact.lastName ||
+  //     !req.body.contact.address ||
+  //     !req.body.contact.city ||
+  //     !req.body.contact.email ||
+  //     !req.body.products) {
+  //   return res.status(400).send(new Error('Bad request!!_!'));
+  // }
+
+  //Enabling CORS
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5500');
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+
+  console.log(res);
+  
+  
   let queries = [];
   for (let productId of req.body.products) {
     const queryPromise = new Promise((resolve, reject) => {

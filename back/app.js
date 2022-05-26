@@ -1,9 +1,13 @@
 const express = require('express');
 const path = require('path');
+var cors=require('cors');
 
 const productRoutes = require('./routes/product');
 
 const app = express();
+
+
+app.use(cors({origin:true,credentials: true}))
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
