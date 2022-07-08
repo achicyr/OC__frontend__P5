@@ -127,8 +127,9 @@ fetch("http://localhost:3000/api/products")
         console.log(formObject)
 
         e.preventDefault()
+        console.log(Object.keys(localStorage))
         console.log(Object.keys(localStorage).every(x=>typeof x == 'string'))
-
+// alert('ok')
         fetch("http://localhost:3000/api/products/order", {
             method: "POST",
             headers: {

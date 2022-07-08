@@ -56,14 +56,6 @@ exports.orderProducts = (req, res, next) => {
   //     !req.body.products) {
   //   return res.status(400).send(new Error('Bad request!!_!'));
   // }
-
-  //Enabling CORS
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5500');
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-
-  console.log(res);
   
   
   let queries = [];
