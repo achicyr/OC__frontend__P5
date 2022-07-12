@@ -47,15 +47,17 @@ exports.getOneProduct = (req, res, next) => {
  *
  */
 exports.orderProducts = (req, res, next) => {
-  if (!req.body.contact ||
-      !req.body.contact.firstName ||
-      !req.body.contact.lastName ||
-      !req.body.contact.address ||
-      !req.body.contact.city ||
-      !req.body.contact.email ||
-      !req.body.products) {
-    return res.status(400).send(new Error('Bad request!'));
-  }
+  // if (!req.body.contact ||
+  //     !req.body.contact.firstName ||
+  //     !req.body.contact.lastName ||
+  //     !req.body.contact.address ||
+  //     !req.body.contact.city ||
+  //     !req.body.contact.email ||
+  //     !req.body.products) {
+  //   return res.status(400).send(new Error('Bad request!!_!'));
+  // }
+  
+  
   let queries = [];
   for (let productId of req.body.products) {
     const queryPromise = new Promise((resolve, reject) => {
